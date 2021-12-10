@@ -1,7 +1,8 @@
 namespace Bakery.Models
 {
-  public class Bread
+  public class Bread : Orderable
   {
+    public Bread(string description) : base(description) { }
 
   }
 }
