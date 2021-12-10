@@ -20,7 +20,7 @@ namespace Bakery.Models
   {
     public Bread(string description) : base(description)
     {
-      OrderableName = "bread";
+      OrderableName = "Bread";
     }
   }
 
