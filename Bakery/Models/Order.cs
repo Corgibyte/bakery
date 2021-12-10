@@ -66,6 +66,7 @@ namespace Bakery.Models
       foreach (Orderable item in _orderItems)
       {
         answer += item;
+        answer += "\n";
       }
       return answer;
     }
