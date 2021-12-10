@@ -14,6 +14,18 @@ namespace Bakery.Models
       //TODO: implement
     }
 
+    public Orderable[] GetItems()
+    {
+      //TODO: implement
+      return new Bread[1];
+    }
+
+    public bool RemoveItem(Orderable itemToRemove)
+    {
+      //TODO: implement
+      return false;
+    }
+
     public void ClearAll()
     {
       //TODO: implement
