@@ -4,25 +4,28 @@ namespace Bakery.Models
 {
   public class Order
   {
+    private List<Orderable> _orderItems;
+
     public Order()
     {
-      //TODO: implement constructor
+      _orderItems = new List<Orderable> { };
     }
 
     public void AddItem(Orderable item)
     {
-      //TODO: implement
+      _orderItems.Add(item);
     }
 
     public Orderable[] GetItems()
     {
-      //TODO: implement
-      return new Bread[1];
+      Orderable[] arr = new Orderable[_orderItems.Count];
+      _orderItems.CopyTo(arr);
+      return arr;
     }
 
     public void ClearAll()
     {
-      //TODO: implement
+      _orderItems.Clear();
     }
 
     public int GetTotal()
