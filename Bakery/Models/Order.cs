@@ -68,6 +68,7 @@ namespace Bakery.Models
         answer += item;
         answer += "\n";
       }
+      answer += $"\nTotal: ${GetTotal()}";
       return answer;
     }
   }
