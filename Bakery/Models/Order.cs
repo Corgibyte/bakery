@@ -20,12 +20,6 @@ namespace Bakery.Models
       return new Bread[1];
     }
 
-    public bool RemoveItem(Orderable itemToRemove)
-    {
-      //TODO: implement
-      return false;
-    }
-
     public void ClearAll()
     {
       //TODO: implement
