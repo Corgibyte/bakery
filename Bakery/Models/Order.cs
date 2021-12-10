@@ -62,8 +62,12 @@ namespace Bakery.Models
 
     public override string ToString()
     {
-      //TODO: implement
-      return "a";
+      string answer = "";
+      foreach (Orderable item in _orderItems)
+      {
+        answer += item;
+      }
+      return answer;
     }
   }
 }

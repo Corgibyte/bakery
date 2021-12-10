@@ -9,6 +9,11 @@ namespace Bakery.Models
     {
       Description = description;
     }
+
+    public override string ToString()
+    {
+      return $"{OrderableName}: {Description}";
+    }
   }
 
   public class Bread : Orderable
