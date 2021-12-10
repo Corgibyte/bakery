@@ -44,4 +44,74 @@ namespace Bakery.Tests
       Assert.AreEqual(description, result);
     }
   }
+
+  [TestClass]
+  public class OrderTests
+  {
+    [TestMethod]
+    public void OrderConstructor_CreatesInstanceOfOrder_Order()
+    {
+      Order newOrder = new();
+      Assert.AreEqual(typeof(Order), newOrder.GetType());
+    }
+
+    [TestMethod]
+    public void AddItem_SingleItemAdded_OrderableArray()
+    {
+      string expectedString = "Brioche";
+      Bread testBread = new(expectedString);
+      Order testOrder = new();
+      testOrder.AddItem(testBread);
+      Orderable[] expectedArr = { testBread };
+      Orderable[] actualArr = testOrder.GetItems();
+      CollectionAssert.AreEqual(expectedArr, actualArr);
+    }
+
+    [TestMethod]
+    public void AddItem_MultipleItemsAdded_OrderableArray()
+    {
+      string expectedString1 = "Brioche";
+      string expectedString2 = "AppleBread";
+      Bread testBread1 = new(expectedString1);
+      Bread testBread2 = new(expectedString2);
+      Order testOrder = new();
+      testOrder.AddItem(testBread1);
+      testOrder.AddItem(testBread2);
+      Orderable[] expectedArr = { testBread1, testBread2 };
+      Orderable[] actualArr = testOrder.GetItems();
+      CollectionAssert.AreEqual(expectedArr, actualArr);
+    }
+
+    [TestMethod]
+    public void ClearAll_MultipleItemsAddedAndCleared_EmptyOrderableArray()
+    {
+      string expectedString1 = "Brioche";
+      string expectedString2 = "AppleBread";
+      Bread testBread1 = new(expectedString1);
+      Bread testBread2 = new(expectedString2);
+      Order testOrder = new();
+      testOrder.AddItem(testBread1);
+      testOrder.AddItem(testBread2);
+      testOrder.ClearAll();
+      Orderable[] expectedArr = { };
+      Orderable[] actualArr = testOrder.GetItems();
+      CollectionAssert.AreEqual(expectedArr, actualArr);
+    }
+
+    [TestMethod]
+    public void GetTotal_EmptyOrder_IntZero()
+    {
+      Order testOrder = new();
+      Assert.AreEqual(0, testOrder.GetTotal());
+    }
+
+    [TestMethod]
+    public void GetTotal_SingleBread_IntFive()
+    {
+      Order testOrder = new();
+      Bread testBread = new("Brioche");
+      testOrder.AddItem(testBread);
+      Assert.AreEqual(5, testOrder.GetTotal());
+    }
+  }
 }
