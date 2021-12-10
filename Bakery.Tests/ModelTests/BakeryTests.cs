@@ -113,5 +113,134 @@ namespace Bakery.Tests
       testOrder.AddItem(testBread);
       Assert.AreEqual(5, testOrder.GetTotal());
     }
+
+    [TestMethod]
+    public void GetTotal_TwoBread_IntTen()
+    {
+      Order testOrder = new();
+      Bread testBread1 = new("Brioche");
+      Bread testBread2 = new("Brioche");
+      testOrder.AddItem(testBread1);
+      testOrder.AddItem(testBread2);
+      Assert.AreEqual(10, testOrder.GetTotal());
+    }
+
+    [TestMethod]
+    public void GetTotal_ThreeBread_IntTen()
+    {
+      Order testOrder = new();
+      Bread testBread1 = new("Brioche");
+      Bread testBread2 = new("Brioche");
+      Bread testBread3 = new("Brioche");
+      testOrder.AddItem(testBread1);
+      testOrder.AddItem(testBread2);
+      testOrder.AddItem(testBread3);
+      Assert.AreEqual(10, testOrder.GetTotal());
+    }
+
+    [TestMethod]
+    public void GetTotal_FourBread_IntFifteen()
+    {
+      Order testOrder = new();
+      Bread testBread1 = new("Brioche");
+      Bread testBread2 = new("Brioche");
+      Bread testBread3 = new("Brioche");
+      Bread testBread4 = new("Brioche");
+      testOrder.AddItem(testBread1);
+      testOrder.AddItem(testBread2);
+      testOrder.AddItem(testBread3);
+      testOrder.AddItem(testBread4);
+      Assert.AreEqual(15, testOrder.GetTotal());
+    }
+
+    [TestMethod]
+    public void GetTotal_SixBread_IntTwenty()
+    {
+      Order testOrder = new();
+      Bread testBread1 = new("Brioche");
+      Bread testBread2 = new("Brioche");
+      Bread testBread3 = new("Brioche");
+      Bread testBread4 = new("Brioche");
+      Bread testBread5 = new("Brioche");
+      Bread testBread6 = new("Brioche");
+      testOrder.AddItem(testBread1);
+      testOrder.AddItem(testBread2);
+      testOrder.AddItem(testBread3);
+      testOrder.AddItem(testBread4);
+      testOrder.AddItem(testBread5);
+      testOrder.AddItem(testBread6);
+      Assert.AreEqual(20, testOrder.GetTotal());
+    }
+
+    [TestMethod]
+    public void GetTotal_OnePastry_IntTwo()
+    {
+      Order testOrder = new();
+      Pastry testPastry = new("Tart");
+      testOrder.AddItem(testPastry);
+      Assert.AreEqual(2, testOrder.GetTotal());
+    }
+    [TestMethod]
+
+    public void GetTotal_TwoPastry_IntFour()
+    {
+      Order testOrder = new();
+      for (int i = 0; i < 2; i++)
+      {
+        testOrder.AddItem(new Pastry("Tart"));
+      }
+      Assert.AreEqual(4, testOrder.GetTotal());
+    }
+
+    public void GetTotal_ThreePastry_IntFive()
+    {
+      Order testOrder = new();
+      for (int i = 0; i < 3; i++)
+      {
+        testOrder.AddItem(new Pastry("Tart"));
+      }
+      Assert.AreEqual(5, testOrder.GetTotal());
+    }
+
+    public void GetTotal_FourPastry_IntSeven()
+    {
+      Order testOrder = new();
+      for (int i = 0; i < 4; i++)
+      {
+        testOrder.AddItem(new Pastry("Tart"));
+      }
+      Assert.AreEqual(7, testOrder.GetTotal());
+    }
+
+    public void GetTotal_FivePastry_IntNine()
+    {
+      Order testOrder = new();
+      for (int i = 0; i < 5; i++)
+      {
+        testOrder.AddItem(new Pastry("Tart"));
+      }
+      Assert.AreEqual(9, testOrder.GetTotal());
+    }
+
+    public void GetTotal_SixPastry_IntTen()
+    {
+      Order testOrder = new();
+      for (int i = 0; i < 6; i++)
+      {
+        testOrder.AddItem(new Pastry("Tart"));
+      }
+      Assert.AreEqual(10, testOrder.GetTotal());
+    }
+
+    public void GetTotal_MixedBreadsPastries_Int()
+    {
+      Order testOrder = new();
+      for (int i = 0; i < 6; i++)
+      {
+        testOrder.AddItem(new Pastry("Tart"));
+        testOrder.AddItem(new Bread("Brioch"));
+      }
+      Assert.AreEqual(30, testOrder.GetTotal());
+    }
   }
 }
