@@ -1,6 +1,6 @@
 ## Corgibite Bakery
 
-![Screenshot of Running Website](./src/Assets/screenshot.png)
+![Screenshot of Running Website](./Bakery/Assets/Screenshot.png)
 
 By Hannah Young
 
