@@ -1,5 +1,7 @@
 ## Corgibite Bakery
 
+![Screenshot of Running Website](./src/Assets/screenshot.png)
+
 By Hannah Young
 
 A simple console application modeling a bakery where you can order items.
